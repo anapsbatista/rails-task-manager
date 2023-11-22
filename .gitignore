@@ -1,2 +1,5 @@
 tmp/* 
 /tmp/cache/bootsnap
+log/development.log
+storage/*
+
