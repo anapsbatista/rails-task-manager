@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :tasks, only:[:index, :new, :create]
+  #list all tasks
+  get "tasks", to: "tasks#index"
+
+  #list one task
+  get "tasks/:id", to: "tasks#show"
 end
