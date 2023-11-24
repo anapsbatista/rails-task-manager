@@ -1,18 +1,12 @@
 <!-- app/views/tasks/new.html.erb -->
-<h1>Nova Tarefa</h1>
+<h1>Create new task</h1>
 
-<%= form_with(model: @task, url: tasks_path, method: :post) do |form| %>
-  <div class="form-group">
-    <%= form.label :title, 'Título da Tarefa' %>
-    <%= form.text_field :title, class: 'form-control' %>
-  </div>
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-  <div class="form-group">
-    <%= form.label :details, 'Detalhes da Tarefa' %>
-    <%= form.text_area :details, class: 'form-control' %>
-  </div>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
 
-  <div class="form-group">
-    <%= form.submit 'Criar Tarefa', class: 'btn btn-primary' %>
-  </div>
+  <%= f.submit, class: 'btn btn-primary' %>
 <% end %>
