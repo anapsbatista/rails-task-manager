@@ -5,6 +5,10 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    if params[:method] == 'delete'
+      @task.destroy
+      redirect_to tasks_path
+    end
   end
 
   def new
@@ -30,8 +34,9 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_path(@task)
+    redirect_to tasks_path
   end
+
   private
 
   def task_params 
